@@ -1,8 +1,8 @@
 export class Identity<T> {
-  private __value: T;
+  private readonly value: T;
 
   constructor(value: T) {
-    this.__value = value;
+    this.value = value;
   }
 
   static of<T>(value: T): Identity<T> {
@@ -10,14 +10,14 @@ export class Identity<T> {
   }
 
   map<V>(fn: (val: T) => V): Identity<V> {
-    return Identity.of(fn(this.__value));
+    return Identity.of(fn(this.value));
   }
 
   flatMap<V>(fn: (val: T) => Identity<V>): Identity<V> {
-    return fn(this.__value);
+    return fn(this.value);
   }
 
   toString(): string {
-    return `Identity(${this.__value})`;
+    return `Identity(${this.value})`;
   }
 }
