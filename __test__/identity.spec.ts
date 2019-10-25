@@ -37,11 +37,11 @@ describe('.flatMap', () => {
   });
 });
 
-describe('.identity', () => {
-  it('returns the inner value of a nested identity monad', () => {
+describe('.extract', () => {
+  it('returns the inner value of an identity monad', () => {
     const MONAD_INNER_NUMBER = 1;
-    const one = Identity.of(Identity.of(Identity.of(MONAD_INNER_NUMBER)));
-    const result: number = one.join();
+    const one = Identity.of(MONAD_INNER_NUMBER);
+    const result = one.extract();
 
     expect(result).toEqual(MONAD_INNER_NUMBER);
   });
