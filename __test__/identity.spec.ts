@@ -36,3 +36,13 @@ describe('.flatMap', () => {
     expect(two).toEqual(Identity.of(2));
   });
 });
+
+describe('.identity', () => {
+  it('returns the inner value of a nested identity monad', () => {
+    const MONAD_INNER_NUMBER = 1;
+    const one = Identity.of(Identity.of(Identity.of(MONAD_INNER_NUMBER)));
+    const result: number = one.join();
+
+    expect(result).toEqual(MONAD_INNER_NUMBER);
+  });
+});
