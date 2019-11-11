@@ -27,21 +27,11 @@ describe('.map', () => {
   });
 });
 
-describe('.flatMap', () => {
-  it('returns a new value with the mapped function applied', () => {
-    const one = Identity.of(1);
-    const two = one.flatMap(a => Identity.of(a + 1));
-
-    expect(two).toBeInstanceOf(Identity);
-    expect(two).toEqual(Identity.of(2));
-  });
-});
-
-describe('.extract', () => {
+describe('.fold', () => {
   it('returns the inner value of an identity monad', () => {
     const MONAD_INNER_NUMBER = 1;
     const one = Identity.of(MONAD_INNER_NUMBER);
-    const result = one.extract();
+    const result = one.fold(x => x);
 
     expect(result).toEqual(MONAD_INNER_NUMBER);
   });

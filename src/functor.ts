@@ -1,6 +1,6 @@
 // https://github.com/fantasyland/fantasy-land#functor
 
-export interface Functor<A> {
+export interface Functor<T> {
   // fantasy-land/map :: Functor f => f a ~> (a -> b) -> f b
-  map<B>(f: (a: A) => B): Functor<B>;
+  map<V>(f: (a: T) => V): Functor<V>;
 }
