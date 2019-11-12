@@ -1,41 +1,40 @@
 {
-  "name": "typescript-boilerplate",
+  "name": "monete",
   "version": "1.0.0",
-  "description": "Basic boilerplate project with Typecript for katas",
-  "main": "main.ts",
+  "description": "Monadic types library for TypeScript",
+  "main": "build/main.js",
   "engineStrict": true,
   "engines": {
-    "node": ">= 8.9.0"
+    "node": ">= 12.10.0"
   },
   "contributors": [
-    "Adrián Ferrera <adrian.ferrera@leanmind.es>",
-    "Daniel Ramos <daniel.ramos@leanmind.es>"
+    "Daniel Ramos <danielramosacosta@hotmail.com>",
+    "Ruben Moya <rmoyarodriguez@gmail.com>"
   ],
-  "license": "ISC",
+  "license": "MIT",
   "scripts": {
     "clean": "rimraf coverage build tmp",
     "build": "babel src -x .ts -d build",
     "build:watch": "babel src -x .ts -d build --watch",
     "lint": "eslint --ext .ts ./src ./__test__",
     "lint:fix": "eslint --ext .ts --fix ./src ./__test__",
-    "pretest": "npm run lint",
     "test": "jest",
     "test:coverage": "jest --coverage",
     "test:watch": "jest --watch"
   },
   "dependencies": {},
   "devDependencies": {
-    "@babel/cli": "^7.6.3",
-    "@babel/core": "^7.6.3",
+    "@babel/cli": "^7.6.4",
+    "@babel/core": "^7.6.4",
     "@babel/plugin-proposal-class-properties": "^7.5.5",
     "@babel/plugin-transform-modules-commonjs": "^7.6.0",
     "@babel/preset-typescript": "^7.6.0",
-    "@types/jest": "^24.0.18",
-    "@typescript-eslint/eslint-plugin": "^2.3.3",
-    "@typescript-eslint/parser": "^2.3.3",
+    "@types/jest": "^24.0.21",
+    "@typescript-eslint/eslint-plugin": "^2.6.0",
+    "@typescript-eslint/parser": "^2.6.0",
     "babel-jest": "^24.9.0",
-    "eslint": "^6.5.1",
-    "eslint-config-prettier": "^6.4.0",
+    "eslint": "^6.6.0",
+    "eslint-config-prettier": "^6.5.0",
     "eslint-config-standard": "^14.1.0",
     "eslint-plugin-import": "^2.18.2",
     "eslint-plugin-node": "^10.0.0",
@@ -45,7 +44,7 @@
     "jest": "^24.9.0",
     "prettier": "^1.18.2",
     "rimraf": "^3.0.0",
-    "typescript": "^3.7.2"
+    "typescript": "^3.6.4"
   },
   "jest": {
     "testEnvironment": "node",
@@ -61,10 +60,6 @@
     ],
     "transform": {
       "^.+\\.(js|jsx|ts|tsx)$": "babel-jest"
-    },
-    "testMatch": [
-      "<rootDir>/__test__/**/*.(j|t)s?(x)",
-      "<rootDir>/src/**/?(*.)(spec|test).(j|t)s?(x)"
-    ]
+    }
   }
 }
